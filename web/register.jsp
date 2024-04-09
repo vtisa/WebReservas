@@ -21,6 +21,16 @@
                         <h3 class="mb-0">Registro de Usuario</h3>
                     </div>
                     <div class="card-body">
+                        <%
+                            String errorMessage = request.getParameter("error");
+
+                             if ("database".equals(errorMessage)) {
+                        %>
+                        <div class="alert alert-danger" role="alert">
+                            Error de conexión a la base de datos.
+                        </div>
+                        <% }%>
+                        
                         <form action="registerProcess.jsp" method="post">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Usuario</label>
